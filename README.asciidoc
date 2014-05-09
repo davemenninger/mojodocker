@@ -31,6 +31,8 @@ Stop the app with:
 1. `sudo docker.io stop <container-id>`
 
 == TODO
+* render JSON
+* specify different port at runtime?
 * include bootstrap locally instead of via cdn?  ( bower? )
 
 == Sources
