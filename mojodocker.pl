@@ -52,5 +52,20 @@ get '/which' => sub {
   $self->render('which');
 };
 
+#how to get a url param ( should work for GET or POST ) and how to render some json
+any '/jfoo' => sub {
+	my $self = shift;
+	my $bn = $self->param('bn');
+	$self->render(json => {
+		$bn => {
+		 bs => ['abcde', 'test', 'blah'],
+		 title => 'example title',
+		 num_items_found => '1'
+		}
+	});
+};
+
+
+
 #run the app
 app->start;

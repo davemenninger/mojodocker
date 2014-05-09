@@ -12,7 +12,8 @@ This app is just here to remind me how to do various things I need to do in a Mo
 * use a template with bootstrap
 * get variables into the template using stash
 * log a message to the Mojo logger
-
+* render JSON
+* get paramerters from GET/POST
 
 == Docker Basics
 To build and run this on Ubuntu 14.04 do:
@@ -31,8 +32,7 @@ Stop the app with:
 1. `sudo docker.io stop <container-id>`
 
 == TODO
-* render JSON
-* specify different port at runtime?
+* specify different port at runtime ( hypnotoad? )
 * include bootstrap locally instead of via cdn?  ( bower? )
 
 == Sources
