@@ -1,0 +1,39 @@
+= Mojolicious + Docker Example App
+Dave Menninger
+
+== Features
+This app is just here to remind me how to do various things I need to do in a Mojolicious app with Docker since it took me a couple days to put all the pieces together.  The things I am demo'ing to my future self are:
+
+* Load a CPAN module via the Dockerfile using a `RUN cpanm`
+* Load a locally created module in Mojolicious using `FindBin`
+* Get config from a local `.cfg` file using `Config::Simple`
+* Get config from environment variables using either `ENV` in Dockerfile or via docker `run` command with `-e` option
+* dynamically create a local file that will be served from the static dir
+* use a template with bootstrap
+* get variables into the template using stash
+* log a message to the Mojo logger
+
+
+== Docker Basics
+To build and run this on Ubuntu 14.04 do:
+
+1. `sudo docker.io build -t mojoexample1 .`
+2. `sudo docker.io run -e "MYCOLOR=orange" mojoexample1`
+
+To find out what IP it's running at do:
+
+1. `sudo docker.io ps`  #look for the container ID
+2. `sudo docker.io inspect <container-id> | grep IPAddress`
+3. visit `http:<ip-address>:3000` or `http:<ip-address>:3000/which`
+
+Stop the app with:
+
+1. `sudo docker.io stop <container-id>`
+
+== TODO
+* include bootstrap locally instead of via cdn?  ( bower? )
+
+== Sources
+* mojolicio.us
+* octohost/mojolicious-app
+* docker.io
